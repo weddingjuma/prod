@@ -1,0 +1,9 @@
+<APPLIST loglevel="info" dbpassword="Baraza2011" greeting="Open Baraza Server" encryption="accessbaaccessba" dbtemplate="baraza" dbpath="jdbc:postgresql://localhost/postgres" dbclass="org.postgresql.Driver" dbusername="postgres" logfile="baraza.log" mode="run">
+	<APP dbpassword="Baraza2011" dbpath="jdbc:postgresql://localhost/hr" dbname="hr" path="hr" xmlfile="hr.xml" dbclass="org.postgresql.Driver" dbusername="postgres" auth="entity">Human Resources</APP>
+	<APP dbpassword="Baraza2011" dbpath="jdbc:postgresql://localhost/hr" dbname="hr" path="hr" xmlfile="payroll.xml" dbclass="org.postgresql.Driver" org="org_id" dbusername="postgres" auth="entity">Payroll</APP>
+	<APP dbpassword="Baraza2011" dbpath="jdbc:postgresql://localhost/hr" dbname="hr" path="hr" xmlfile="projects.xml" dbclass="org.postgresql.Driver" org="org_id" dbusername="postgres" auth="entity">Projects</APP>
+	<APP dbpassword="Baraza2011" dbpath="jdbc:postgresql://localhost/hr" dbname="hr" path="hr" xmlfile="finance.xml" dbclass="org.postgresql.Driver" org="org_id" dbusername="postgres" auth="entity">Finance</APP>
+	<APP dbpassword="Baraza2011" dbpath="jdbc:postgresql://localhost/baraza" dbname="baraza" path="baraza" xmlfile="baraza.xml" disable="true" dbclass="org.postgresql.Driver" dbusername="postgres" auth="entity">Baraza</APP>
+	<SERVER dbpassword="Baraza2011" dbpath="jdbc:postgresql://localhost/hr" dbname="hr" path="hr" xmlfile="mail.xml" dbclass="org.postgresql.Driver" dbusername="postgres">HR Mailing Server</SERVER>
+	<SERVER dbpassword="Baraza2011" dbpath="jdbc:postgresql://localhost/hr" dbname="hr" path="hr" xmlfile="tomcat.xml" disable="false" dbclass="org.postgresql.Driver" dbusername="postgres">HR Tomcat Server</SERVER>
+</APPLIST>

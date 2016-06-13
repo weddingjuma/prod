@@ -1,0 +1,32 @@
+Tue Mar 22 11:36:09 EAT 2016 org.baraza.server.BServer <init>
+INFO : Server started
+Tue Mar 22 11:37:03 EAT 2016 org.baraza.server.BServer <init>
+INFO : Server started
+Wed Mar 30 06:47:53 EAT 2016 org.baraza.server.escalation.BEscalation task
+INFO : ---------- Escalation Client Run for : HR Mail
+Wed Mar 30 06:47:54 EAT 2016 org.baraza.server.escalation.BEscalation task
+INFO : SELECT sys_emailed_id, sys_emails.title as emailsubject, entitys.primary_email as emailaddress, entitys.entity_name, entitys.user_name, entitys.first_password, sys_emailed.narrative, sys_emailed.mail_body, sys_emails.details FROM sys_emails, sys_emailed, entitys  WHERE (entitys.entity_id = sys_emailed.table_id) AND (sys_emailed.emailed = false)    AND (sys_emails.sys_email_id = sys_emailed.sys_email_id)
+Wed Mar 30 06:47:54 EAT 2016 org.baraza.server.escalation.BEscalation task
+INFO : To : joseph.kamau@obmails.com
+Subject : Thank you for your Application
+Wed Mar 30 06:47:54 EAT 2016 org.baraza.server.escalation.BEscalation task
+INFO : To : dennisgichangi@gmail.com
+Subject : Thank you for your Application
+Wed Mar 30 06:47:55 EAT 2016 org.baraza.server.escalation.BEscalation task
+INFO : SELECT sys_emailed_id, get_phase_email(vw_approvals.approval_entity_id) as emailaddress, vw_approvals.phase_narrative as emailsubject, vw_approvals.advice_email, vw_approvals.org_entity_name, (get_phase_entitys(vw_approvals.approval_entity_id)) as approval_entitys, vw_approvals.table_id, vw_approvals.notice_file FROM sys_emailed, vw_approvals  WHERE (vw_approvals.approval_id = sys_emailed.table_id) AND (sys_emailed.emailed = false)       AND (sys_emailed.table_name = 'approvals') AND (sys_emailed.email_type = 1)      AND (vw_approvals.use_reporting = false)
+Wed Mar 30 06:47:55 EAT 2016 org.baraza.DB.BQuery makeQuery
+SEVERE : Get Table read and Metadata Error : org.postgresql.util.PSQLException: ERROR: function get_phase_entitys(integer) does not exist
+  Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+  Position: 194
+Wed Mar 30 06:47:55 EAT 2016 org.baraza.DB.BQuery makeQuery
+SEVERE : SQL SELECT sys_emailed_id, get_phase_email(vw_approvals.approval_entity_id) as emailaddress, vw_approvals.phase_narrative as emailsubject, vw_approvals.advice_email, vw_approvals.org_entity_name, (get_phase_entitys(vw_approvals.approval_entity_id)) as approval_entitys, vw_approvals.table_id, vw_approvals.notice_file FROM sys_emailed, vw_approvals  WHERE (vw_approvals.approval_id = sys_emailed.table_id) AND (sys_emailed.emailed = false)       AND (sys_emailed.table_name = 'approvals') AND (sys_emailed.email_type = 1)      AND (vw_approvals.use_reporting = false)
+Wed Mar 30 06:47:55 EAT 2016 org.baraza.server.escalation.BEscalation task
+INFO : SELECT sys_emailed_id, vw_approvals_entitys.primary_email as emailaddress, vw_approvals_entitys.phase_narrative as emailsubject, vw_approvals_entitys.advice_email, vw_approvals_entitys.org_entity_name, vw_approvals_entitys.approval_entity_name, vw_approvals_entitys.table_id, vw_approvals_entitys.notice_file FROM sys_emailed, vw_approvals_entitys  WHERE (vw_approvals_entitys.approval_id = sys_emailed.table_id) AND (sys_emailed.emailed = false)       AND (sys_emailed.email_type = 1) AND (vw_approvals_entitys.use_reporting = true)
+Wed Mar 30 06:47:55 EAT 2016 org.baraza.server.escalation.BEscalation task
+INFO : SELECT sys_emailed_id, vw_approvals.org_primary_email as emailaddress, vw_approvals.phase_narrative as emailsubject, vw_approvals.org_entity_name, vw_approvals.notice_email FROM sys_emailed, vw_approvals  WHERE (vw_approvals.approval_id = sys_emailed.table_id) AND (sys_emailed.emailed = false)      AND (sys_emailed.table_name = 'approvals') AND (sys_emailed.email_type = 2)
+Wed Mar 30 06:47:55 EAT 2016 org.baraza.server.escalation.BEscalation task
+INFO : SELECT sys_emailed_id, vw_workflow_approvals.org_primary_email as emailaddress, vw_workflow_approvals.workflow_narrative as emailsubject, vw_workflow_approvals.approve_email FROM sys_emailed, vw_workflow_approvals  WHERE (vw_workflow_approvals.table_id = sys_emailed.table_id) AND (sys_emailed.emailed = false)       AND (sys_emailed.table_name = 'vw_workflow_approvals') AND (sys_emailed.email_type = 1)
+Wed Mar 30 06:47:55 EAT 2016 org.baraza.server.escalation.BEscalation task
+INFO : SELECT sys_emailed_id, vw_workflow_approvals.org_primary_email as emailaddress, vw_workflow_approvals.workflow_narrative as emailsubject, vw_workflow_approvals.reject_email FROM sys_emailed, vw_workflow_approvals  WHERE (vw_workflow_approvals.table_id = sys_emailed.table_id) AND (sys_emailed.emailed = false)       AND (sys_emailed.table_name = 'vw_workflow_approvals') AND (sys_emailed.email_type = 2)
+Wed Mar 30 06:47:57 EAT 2016 org.baraza.server.BServer <init>
+INFO : Server started
